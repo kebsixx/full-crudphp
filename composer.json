@@ -1,0 +1,9 @@
+{
+    "require": {
+        "ext-gd": "*",
+        "ext-fileinfo": "*",
+        "phpoffice/phpspreadsheet": "^2.2",
+        "spipu/html2pdf": "^5.2",
+        "picqer/php-barcode-generator": "^2.4"
+    }
+}
