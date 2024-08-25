@@ -32,6 +32,8 @@ include "config/database.php";
     <link rel="stylesheet" href="assets-template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- ckeditor -->
     <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -99,6 +101,14 @@ include "config/database.php";
                                 </a>
                             </li>
                         <?php endif; ?>
+                        <li class="nav-item">
+                            <a href="pegawai.php" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="akun.php" class="nav-link">
                                 <i class="nav-icon fas fa-user-cog"></i>
