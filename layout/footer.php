@@ -69,6 +69,36 @@
         $('#example2').DataTable();
     });
 </script>
+<script>
+    new DataTable('#serverSide', {
+        ajax: {
+            url: 'siswa-serverside.php?action=table_data',
+            type: 'POST',
+            dataType: 'json'
+        },
+        columns: [{
+                data: 'no'
+            },
+            {
+                data: 'nama'
+            },
+            {
+                data: 'jurusan'
+            },
+            {
+                data: 'jk'
+            },
+            {
+                data: 'telepon'
+            },
+            {
+                data: 'aksi'
+            }
+        ],
+        processing: true,
+        serverSide: true
+    });
+</script>
 <script type="importmap">
     {
                 "imports": {
