@@ -30,7 +30,14 @@ require 'vendor/autoload.php';
 // This will output the barcode as HTML output to display in the browser
 $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
 
-$data_barang = select("SELECT * FROM barang ORDER BY id_barang DESC");
+if (isset($_POST['filter'])) {
+    $tgl_awal = strip_tags($_POST['tgl_awal'] . " 00:00:00");
+    $tgl_akhir = strip_tags($_POST['tgl_akhir'] . " 23:59:59");
+
+    $data_barang = select("SELECT * FROM barang WHERE tanggal BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY id_barang DESC");
+} else {
+    $data_barang = select("SELECT * FROM barang ORDER BY id_barang DESC");
+}
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -131,6 +138,10 @@ $data_barang = select("SELECT * FROM barang ORDER BY id_barang DESC");
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <a href="tambah-barang.php" class="btn btn-primary mb-2"><i class="fas fa-plus-circle"></i> Tambah</a>
+
+                                    <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#modalFilter">
+                                        <i class="fas fa-search"></i> Filter Data
+                                    </button>
                                     <table id="example2" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
@@ -178,6 +189,35 @@ $data_barang = select("SELECT * FROM barang ORDER BY id_barang DESC");
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalFilter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fas fa-search"></i> Filter Search</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="tgl_awal">Tanggal Awal</label>
+                        <input type="date" class="form-control" id="tgl_awal" name="tgl_awal">
+                    </div>
+                    <div class="form-group">
+                        <label for="tgl_akhir">Tanggal Akhir</label>
+                        <input type="date" class="form-control" id="tgl_akhir" name="tgl_akhir">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-success" name="filter">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php include 'layout/footer.php' ?>

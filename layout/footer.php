@@ -16,7 +16,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery UI 1.11.4 -->
-<script src="assets-template/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
