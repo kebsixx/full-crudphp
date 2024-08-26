@@ -159,7 +159,7 @@ if (isset($_POST['login'])) {
 <body class="d-flex align-items-center py-4 bg-body-tertiary text-center">
     <main class="form-signin w-100 m-auto">
         <form action="" method="POST">
-            <img class="mb-4" src="assets/images/bootstrap-logo.svg" alt="" width="72" height="57">
+            <!-- <img class="mb-4" src="assets/images/bootstrap-logo.svg" alt="" width="72" height="57"> -->
             <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
 
             <?php if (isset($error)) : ?>
