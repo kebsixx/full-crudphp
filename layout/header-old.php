@@ -36,7 +36,7 @@ include "config/database.php";
                         </li>
                     <?php endif; ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="crud-modal.php">Akun</a>
+                        <a class="nav-link" href="akun.php">Akun</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php" onclick="return confirm('Yakin ingin keluar ?');">Keluar</a>

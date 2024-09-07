@@ -28,12 +28,12 @@ if (isset($_POST['tambah'])) {
     if (create_akun($_POST) > 0) {
         echo "<script>
             alert('Data Akun Berhasil Ditambahkan');
-            document.location.href = 'crud-modal.php';
+            document.location.href = 'akun.php';
         </script>";
     } else {
         echo "<script>
             alert('Data Akun Berhasil Ditambahkan');
-            document.location.href = 'crud-modal.php';
+            document.location.href = 'akun.php';
         </script>";
     }
 }
@@ -42,12 +42,12 @@ if (isset($_POST['ubah'])) {
     if (update_akun($_POST) > 0) {
         echo "<script>
             alert('Data Akun Berhasil Diubah');
-            document.location.href = 'crud-modal.php';
+            document.location.href = 'akun.php';
         </script>";
     } else {
         echo "<script>
             alert('Data Akun Berhasil Diubah');
-            document.location.href = 'crud-modal.php';
+            document.location.href = 'akun.php';
         </script>";
     }
 }
